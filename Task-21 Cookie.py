@@ -62,5 +62,5 @@ print("Cookies After LogOut:")
 cookie_logout=driver.get_cookies()
 for cookie2 in cookie_logout:
     print(cookie2)
-
+driver.close()
 driver.quit()
