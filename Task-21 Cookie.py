@@ -1,10 +1,26 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.action_chains import ActionChains
-import time
+##Method-1
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.common.action_chains import ActionChains
+# import time
 
-driver=webdriver.Chrome()
+## Method-2
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+import time
+import os
+import requests
+paths= r"E:\PyCharm\chromedriver.exe"
+
+## Importing Options
+os.environ["PATH"] += os.pathsep + os.path.dirname(paths)
+chrome_options= Options()
+chrome_options.add_experimental_option("detach", True)
+driver=webdriver.Chrome(options=chrome_options)
+
+# driver=webdriver.Chrome()
 driver.get("https://www.saucedemo.com/")
 time.sleep(3)
 
